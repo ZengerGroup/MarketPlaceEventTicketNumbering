@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPlaceEventTicketNumbering.MainPage">
+    <Grid RowDefinitions="25,25,50,50,50,50,50,50,50,50,50,50" ColumnDefinitions="100,100,100,100,100,100,100,100,100,100">
+        <!--Inputs-->
+        <Label Text="Version" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="VersionEntry" Grid.Row="2" Grid.Column="0" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Label Text="Mailing Name" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="MailingEntry" Grid.Row="2" Grid.Column="1" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Label Text="Prefix" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="PrefixEntry" Grid.Row="2" Grid.Column="2" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Label Text="Records" Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="RecordEntry" Grid.Row="2" Grid.Column="3" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Label Text="Tickets/Record" Grid.Row="1" Grid.Column="4" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="TicketsEntry" Grid.Row="2" Grid.Column="4" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Label Text="Overs %" Grid.Row="1" Grid.Column="5" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="OversEntry" Grid.Row="2" Grid.Column="5" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Label Text="Group Name" Grid.Row="1" Grid.Column="6" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Entry x:Name="GroupEntry" Grid.Row="2" Grid.Column="6" MaximumHeightRequest="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <!--RowDisplay-->
+        <Border Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="4" Grid.RowSpan="4" Stroke="Yellow">
+            <Grid RowDefinitions="25,175" ColumnDefinitions="100,100,100,100,100,100">
+                <Border Grid.Row="0" Grid.Column="0" Stroke="Blue">
+                    <Label Text="Version" HorizontalOptions="Center"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" Stroke="Blue">
+                    <Label Text="Mailing Name" HorizontalOptions="Center"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="2" Stroke="Blue">
+                    <Label Text="Prefix" HorizontalOptions="Center"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="3" Stroke="Blue">
+                    <Label Text="Quantity" HorizontalOptions="Center"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="4" Stroke="Blue">
+                    <Label Text="Overs" HorizontalOptions="Center"/>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="5" Stroke="Blue">
+                    <Label Text="Group" HorizontalOptions="Center"/>
+                </Border>
+                <ScrollView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6">
+                    <VerticalStackLayout x:Name="RowTable" />
+                </ScrollView>
+            </Grid>
+        </Border>
+        <!--Controls-->
+        <Button Text="Add Row" x:Name="AddButton" Grid.Row="1" Grid.RowSpan="2" Grid.Column="7" MaximumHeightRequest="50" VerticalOptions="Center" Clicked="AddButton_Clicked"/>
+        <Button Text="Edit Last Row" x:Name="EditButton" Grid.Row="1" Grid.RowSpan="2" Grid.Column="8" Grid.ColumnSpan="2" MaximumHeightRequest="50" HorizontalOptions="Center" 
+                VerticalOptions="Center" Clicked="EditButton_Clicked"/>
+        <Button Text="Begin Processing" x:Name="ProcessButton" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="2" MaximumHeightRequest="50" HorizontalOptions="Center" 
+                VerticalOptions="Center" Clicked="ProcessButton_Clicked"/>
+        <!--ZG Logo-->
+        <Image Source="zenger_logo.png" HeightRequest="100" WidthRequest="400" Aspect="AspectFit" SemanticProperties.Description="ZG Logo and tag line." 
+            Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="9" Grid.RowSpan="2"/>
+    </Grid>
+</ContentPage>
